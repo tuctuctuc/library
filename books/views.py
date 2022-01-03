@@ -5,12 +5,16 @@ from django.http import HttpResponse
 #Индекс страница
 def index(request):
     books =[
-        {'title':'TOFR',
-        'genre':'fantasy',
-        'slug':'first-book'},
-        {'title':'The thief',
-        'genre':'roman',
-        'slug':'second-book'}
+        {
+            'title':'TOFR',
+            'genre':'fantasy',
+            'slug':'first-book'
+        },
+        {
+            'title':'The thief',
+            'genre':'roman',
+            'slug':'second-book'
+        }
     ]
     return render(request, 'books/index.html',{
         'show_books': True,
