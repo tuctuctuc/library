@@ -1,0 +1,46 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href = "{% static 'books/styles/main.css'%}">
+    <link rel="stylesheet" href = "{% static 'books/styles/all-books.css' %}">   
+</head>
+<body>
+    <header id = "main-header">
+        <nav><a href="/main" id="main-header">Library</a></nav>
+        <h1>We've got some books lets take one of them</h1>
+        <p>You can choice any of you want after reg and auth</p>
+    </header>
+    <main>
+        <section>
+            <h2>Current books</h2>
+            <ol>
+                {%for book_item in books %}
+                <li class = "book-item">
+                    <article>
+                        <div class= "book-summary">
+                            <div class = "book-image">
+                                <img src ="" alt="">
+                            </div>
+                            <div class = "book-details">
+                                <h3>{{book_item.title}}</h3>
+                                <address>{{book_item.genre}}</address>
+                            </div>
+                        </div>
+                        <div class = "book_actions">
+                            <a href="" class="btn"> More Details</a>
+                        </div>
+                    </article>
+                </li>
+
+                {%endfor%}
+            </ol>
+        </section>
+
+    </main>
+</body>
+</html>
